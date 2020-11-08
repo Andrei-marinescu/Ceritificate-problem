@@ -1,0 +1,233 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+     int n,m,a[20][20],p,c,s=0,prod=1;
+
+     cout<<" Calcule in matrice "<<endl;
+    cout << "Numarul de linii: ";
+    cin>>n;
+    cout << "Numarul de coloane: ";
+    cin>>m;
+    cout<< "Introdu matricea: "<<endl;
+    for(int i=0;i<n;i++)
+     for(int j=0;j<m;j++)
+          cin>>a[i][j];
+          cout<<endl;
+     for(int i=0;i<n;i++){
+     for(int j=0;j<m;j++)
+          cout<<a[i][j]<<' ';
+          cout<<endl;
+          }
+
+     if(n==m){
+          cout<<"Operatii disponibile: "<<endl;
+          cout<<"1 - Suma diagonala principala"<<endl;
+          cout<<"2 - Suma diagonala secundara"<<endl;
+          cout<<"3 - Suma pe linie"<<endl;
+          cout<<"4 - Suma pe coloana"<<endl;
+          cout<<"5 - Produsul pe diagonala principala"<<endl;
+          cout<<"6 - Produsul pe diagonala secundara"<<endl;
+          cout<<"7 - Produsul pe linie"<<endl;
+          cout<<"8 - Produsul pe coloana"<<endl;
+          cout<<"9 - Media aritmetica pe diagonala principala"<<endl;
+          cout<<"10 - Media aritmetica pe diagonala secundara"<<endl;
+          cout<<"11 - Media aritmetica pe linie"<<endl;
+          cout<<"12 - Media aritmetica pe coloana"<<endl;
+          cout<<"PENTRU A IESI INTRODU '99' "<<endl;
+          cout<<" Introdu numarul operatiei: ";
+
+          cin>>p;
+          while(p!= 99){
+          switch(p){
+          case 1:
+
+          for(int i=0;i<n;i++)
+               s=s+a[i][i];
+          cout<<s<<endl;;
+          break;
+          case 2:
+
+          for(int i=0;i<n;i++)
+               for(int j=0;j<m;j++)
+               if(i+j==n-1)
+                    s=s+a[i][j];
+          cout<<s<<endl;;
+          break;
+          case 3:
+               cout<<"Introdu numarul liniei,numar intre 0 si " <<n-1<<": ";
+               cin>>c;
+
+               for(int i=0;i<n;i++)
+                    s=s+a[c][i];
+                    cout<<s<<endl;;
+                    break;
+          case 4:
+               cout<<"Introdu numarul coloanei,numar intre 0 si " <<n-1<<": ";
+               cin>>c;
+
+               for(int i=0;i<n;i++)
+                    s=s+a[i][c];
+                    cout<<s<<endl;;
+                    break;
+          case 5:
+
+          for(int i=0;i<n;i++)
+               prod=prod*a[i][i];
+          cout<<prod<<endl;;
+          break;
+          case 6:
+
+          for(int i=0;i<n;i++)
+               for(int j=0;j<m;j++)
+               if(i+j==n-1)
+                    prod=prod*a[i][j];
+          cout<<prod<<endl;;
+          break;
+          case 7:
+               cout<<"Introdu numarul liniei,numar intre 0 si " <<n-1<<": ";
+               cin>>c;
+
+               for(int i=0;i<n;i++)
+                    prod=prod*a[c][i];
+                    cout<<prod<<endl;;
+                    break;
+          case 8:
+               cout<<"Introdu numarul coloanei,numar intre 0 si " <<n-1<<": ";
+               cin>>c;
+
+               for(int i=0;i<n;i++)
+                    prod=prod*a[i][c];
+                    cout<<prod<<endl;;
+                    break;
+          case 9:
+
+          for(int i=0;i<n;i++)
+               s=s+a[i][i];
+          cout<<(float)s/n<<endl;;
+          break;
+          case 10:
+
+          for(int i=0;i<n;i++)
+               for(int j=0;j<m;j++)
+               if(i+j==n-1)
+                    s=s+a[i][j];
+          cout<<(float)s/n<<endl;;
+          break;
+          case 11:
+               cout<<"Introdu numarul liniei,numar intre 0 si " <<n-1<<": ";
+               cin>>c;
+
+               for(int i=0;i<n;i++)
+                    s=s+a[c][i];
+                    cout<<(float)s/n<<endl;;
+                    break;
+          case 12:
+               cout<<"Introdu numarul coloanei,numar intre 0 si " <<n-1<<": ";
+               cin>>c;
+
+               for(int i=0;i<n;i++)
+                    s=s+a[i][c];
+                    cout<<(float)s/n<<endl;;
+                    break;
+
+          }
+
+     s=0;prod=1;
+     cin>>p;
+
+
+     }
+
+
+     }
+
+     else{
+          cout<<"Operatii disponibile: "<<endl;
+          //cout<<"1 - Suma diagonala principala"<<endl;
+         // cout<<"2 - Suma diagonala secundara"<<endl;
+          cout<<"1 - Suma pe linie"<<endl;
+          cout<<"2 - Suma pe coloana"<<endl;
+          //cout<<"5 - Produsul pe diagonala principala"<<endl;
+         // cout<<"6 - Produsul pe diagonala secundara"<<endl;
+          cout<<"3 - Produsul pe linie"<<endl;
+          cout<<"4 - Produsul pe coloana"<<endl;
+          //cout<<"9 - Media aritmetica pe diagonala principala"<<endl;
+          //cout<<"10 - Media aritmetica pe diagonala secundara"<<endl;
+          cout<<"5 - Media aritmetica pe linie"<<endl;
+          cout<<"6 - Media aritmetica pe coloana"<<endl;
+          cout<<"PENTRU A IESI INTRODU '99' "<<endl;
+          cout<<" Introdu numarul operatiei: ";
+
+          cin>>p;
+          while(p!= 99){
+          switch(p){
+
+          case 1:
+               cout<<"Introdu numarul liniei,numar intre 0 si " <<n-1<<": ";
+               cin>>c;
+
+               for(int i=0;i<m;i++)
+                    s=s+a[c][i];
+                    cout<<s<<endl;;
+                    break;
+          case 2:
+               cout<<"Introdu numarul coloanei,numar intre 0 si " <<m-1<<": ";
+               cin>>c;
+
+               for(int i=0;i<n;i++)
+                    s=s+a[i][c];
+                    cout<<s<<endl;;
+                    break;
+
+          case 3:
+               cout<<"Introdu numarul liniei,numar intre 0 si " <<n-1<<": ";
+               cin>>c;
+
+               for(int i=0;i<m;i++)
+                    prod=prod*a[c][i];
+                    cout<<prod<<endl;;
+                    break;
+          case 4:
+               cout<<"Introdu numarul coloanei,numar intre 0 si " <<m-1<<": ";
+               cin>>c;
+
+               for(int i=0;i<n;i++)
+                    prod=prod*a[i][c];
+                    cout<<prod<<endl;;
+                    break;
+
+          case 5:
+               cout<<"Introdu numarul liniei,numar intre 0 si " <<n-1<<": ";
+               cin>>c;
+
+               for(int i=0;i<m;i++)
+                    s=s+a[c][i];
+                    cout<<float(s/n)<<endl;;
+                    break;
+          case 6:
+               cout<<"Introdu numarul coloanei,numar intre 0 si " <<m-1<<": ";
+               cin>>c;
+
+               for(int i=0;i<n;i++)
+                    s=s+a[i][c];
+                    cout<<float(s/n)<<endl;;
+                    break;
+
+          }
+
+     s=0;prod=1;
+     cin>>p;
+
+
+     }
+
+
+     }
+
+
+
+    return 0;
+}
